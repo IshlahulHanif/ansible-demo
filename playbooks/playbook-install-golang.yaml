@@ -1,0 +1,9 @@
+---
+# playbooks file for golang install
+
+- name: RiskTech Install golang
+  hosts: server-a
+  tasks:
+    - name: install golang
+      apt:
+        name: golang-go
