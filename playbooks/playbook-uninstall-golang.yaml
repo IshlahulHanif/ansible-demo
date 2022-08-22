@@ -1,0 +1,10 @@
+---
+# playbooks file for golang install
+
+- name: RiskTech Uninstall golang
+  hosts: server-a
+  tasks:
+    - name: uninstall golang
+      apt:
+        name: golang-go
+        state: absent
