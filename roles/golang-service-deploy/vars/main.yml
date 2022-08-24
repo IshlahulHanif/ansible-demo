@@ -1,4 +1,4 @@
 ---
 # vars file for golang-service-deploy
-golang_service_repo: {{ custom_golang_service_repo | default('default_golang_service_repo')}}
-golang_service_dir: {{ custom_golang_service_dir | default('default_golang_service_repo')}}
+golang_service_repo: '{{ custom_golang_service_repo | default('default_golang_service_repo')}}'
+golang_service_dir: '{{ custom_golang_service_dir | default('default_golang_service_repo')}}'
