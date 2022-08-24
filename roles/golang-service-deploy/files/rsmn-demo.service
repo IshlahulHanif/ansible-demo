@@ -1,0 +1,19 @@
+[Unit]
+Description=Risk Tech Academy ansible demo service
+ConditionPathExists=/usr/github.com/risk-tech-ansible-server-demo
+After=network.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+WorkingDirectory=/usr/github.com/risk-tech-ansible-server-demo
+ExecStart=/usr/github.com/risk-tech-ansible-server-demo/rsmn-demo
+Restart=on-failure
+RestartSec=10
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=rsmndemoservice
+
+[Install]
+WantedBy=multi-user.target

@@ -1,2 +1,29 @@
 ---
 # tasks file for golang-service-deploy
+- name: create dir
+  file:
+    path: /usr/github.com/risk-tech-ansible-server-demo
+    state: directory
+    owner: root
+    group: root
+    mode: 0644
+- name: pull code repo
+  git:
+    repo: https://github.com/IshlahulHanif/risk-tech-ansible-server-demo.git
+    dest: /usr/github.com/risk-tech-ansible-server-demo
+- name: build go project
+  shell: (cd /usr/github.com/risk-tech-ansible-server-demo && go build -o rsmn-demo)
+- name: copy systemd config file
+  copy:
+    src: rsmn-demo.service
+    dest: /etc/systemd/system
+    owner: root
+    group: root
+    mode: 0644
+- name: reload daemon
+  ansible.builtin.systemd:
+    daemon_reload: yes
+- name: Start rsmn-demo service
+  ansible.builtin.service:
+    name: rsmn-demo
+    state: started
