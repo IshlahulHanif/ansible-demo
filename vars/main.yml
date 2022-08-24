@@ -4,3 +4,4 @@ postgresql_users:
   - name: example_user
     password: supersecure
 postgres_users_no_log: false
+postgresql_python_library: python3-psycopg2
