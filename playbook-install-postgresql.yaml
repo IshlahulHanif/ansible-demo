@@ -1,6 +1,7 @@
 - name: "Install Postgresql"
-  hosts: database
+  hosts: server-a
   become: yes
+  become_user: root
   vars_files:
     - vars/main.yml
   roles:
