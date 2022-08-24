@@ -14,7 +14,7 @@
   notify:
     - "rsmn-demo project file updated"
 - name: build go project
-  shell: '({{ golang_service_dir }} && go build -o rsmn-demo)'
+  shell: '(cd {{ golang_service_dir }} && go build -o rsmn-demo)'
 - name: copy systemd config file
   copy:
     src: rsmn-demo.service
