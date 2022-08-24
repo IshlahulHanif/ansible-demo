@@ -1,0 +1,7 @@
+---
+# playbooks file for golang install
+
+- name: RiskTech full deployment
+  hosts: server-a
+  roles:
+    - golang-install

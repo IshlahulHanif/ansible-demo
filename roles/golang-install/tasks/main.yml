@@ -1,0 +1,5 @@
+---
+# tasks file for golang-install
+- name: install golang
+  apt:
+    name: golang-go
