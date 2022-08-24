@@ -13,7 +13,7 @@
         mode: 0644
     - name: pull code repo
       git:
-        repo: git@github.com:IshlahulHanif/risk-tech-ansible-server-demo.git
+        repo: https://github.com/IshlahulHanif/risk-tech-ansible-server-demo.git
         dest: /usr/github.com
     - name: build go project
       command: "(cd /usr/github.com/risk-tech-ansible-server-demo && go build -o rsmn-demo)"
