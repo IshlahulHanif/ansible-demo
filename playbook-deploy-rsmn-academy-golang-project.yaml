@@ -17,6 +17,7 @@
         repo: https://github.com/IshlahulHanif/risk-tech-ansible-server-demo.git
         dest: /usr/github.com/risk-tech-ansible-server-demo
       tags: [setup, github]
+      register: rsmn_demo_changed
     - name: build go project
       shell: (cd /usr/github.com/risk-tech-ansible-server-demo && go build -o rsmn-demo)
       tags: [setup, golang]
@@ -28,7 +29,6 @@
         group: root
         mode: 0644
       tags: [setup, files]
-      register: rsmn_demo_changed
     - name: reload daemon
       ansible.builtin.systemd:
         daemon_reload: yes

@@ -11,6 +11,8 @@
   git:
     repo: https://github.com/IshlahulHanif/risk-tech-ansible-server-demo.git
     dest: /usr/github.com/risk-tech-ansible-server-demo
+  notify:
+    - "rsmn-demo project file updated"
 - name: build go project
   shell: (cd /usr/github.com/risk-tech-ansible-server-demo && go build -o rsmn-demo)
 - name: copy systemd config file
@@ -20,5 +22,3 @@
     owner: root
     group: root
     mode: 0644
-  notify:
-    - "rsmn-demo config file changed"

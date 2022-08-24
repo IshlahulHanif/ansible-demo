@@ -5,7 +5,7 @@
     daemon_reload: yes
   become: yes
   listen:
-    - "rsmn-demo config file changed"
+    - "rsmn-demo project file updated"
 
 - name: restart rsmn-demo
   systemd:
@@ -14,4 +14,4 @@
     state: restarted
   become: yes
   listen:
-    - "rsmn-demo config file changed"
+    - "rsmn-demo project file updated"
