@@ -1,14 +1,14 @@
 [Unit]
 Description=Risk Tech Academy ansible demo service
-ConditionPathExists=/usr/ansible-demo/risk-tech-ansible-server-demo
+ConditionPathExists=/usr/github.com/risk-tech-ansible-server-demo
 After=network.target
 
 [Service]
 Type=simple
 User=root
 Group=root
-WorkingDirectory=/usr/ansible-demo/risk-tech-ansible-server-demo
-ExecStart=/usr/ansible-demo/risk-tech-ansible-server-demo/rsmn-demo
+WorkingDirectory=/usr/github.comrisk-tech-ansible-server-demo
+ExecStart=/usr/github.com/risk-tech-ansible-server-demo/rsmn-demo
 Restart=on-failure
 RestartSec=10
 StandardOutput=syslog
