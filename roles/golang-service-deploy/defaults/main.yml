@@ -1,3 +1,5 @@
 ---
 # defaults file for golang-service-deploy
-systemd_service_config_dir: /etc/systemd/system
+default_systemd_service_config_dir: /etc/systemd/system
+default_golang_service_repo: https://github.com/IshlahulHanif/risk-tech-ansible-server-demo.git
+default_golang_service_dir: /usr/github.com/risk-tech-ansible-server-demo

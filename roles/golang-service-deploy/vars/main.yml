@@ -1,4 +1,4 @@
 ---
 # vars file for golang-service-deploy
-golang_service_repo: https://github.com/IshlahulHanif/risk-tech-ansible-server-demo.git
-golang_service_dir: /usr/github.com/risk-tech-ansible-server-demo
+golang_service_repo: {{ custom_golang_service_repo | default('default_golang_service_repo')}}
+golang_service_dir: {{ custom_golang_service_dir | default('default_golang_service_repo')}}

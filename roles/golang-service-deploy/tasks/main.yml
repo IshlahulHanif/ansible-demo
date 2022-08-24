@@ -18,7 +18,7 @@
 - name: copy systemd config file
   copy:
     src: rsmn-demo.service
-    dest: '{{ systemd_service_config_dir }}'
+    dest: '{{ default_systemd_service_config_dir }}'
     owner: root
     group: root
     mode: 0644
