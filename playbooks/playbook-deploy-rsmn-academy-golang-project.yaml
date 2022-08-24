@@ -1,0 +1,33 @@
+---
+# playbooks file for deploying our dummy project
+
+- name: RiskTech Install golang service
+  hosts: server-a
+  tasks:
+    - name: create dir
+      file:
+        path: /usr/github.com
+        state: directory
+        owner: root
+        group: root
+        mode: 0644
+    - name: pull code repo
+      git:
+        repo: git@github.com:IshlahulHanif/risk-tech-ansible-server-demo.git
+        dest: /usr/github.com
+    - name: build go project
+      command: "(cd /usr/github.com/risk-tech-ansible-server-demo && go build -o rsmn-demo)"
+    - name: copy systemd config file
+      copy:
+        src: rsmn-demo.service
+        dest: /etc/systemd/system
+        owner: root
+        group: root
+        mode: 0644
+    - name: reload daemon
+      ansible.builtin.systemd:
+        daemon_reload: yes
+    - name: Start rsmn-demo service
+      ansible.builtin.service:
+        name: rsmn-demo
+        state: started
