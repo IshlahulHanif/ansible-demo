@@ -16,7 +16,7 @@
         repo: https://github.com/IshlahulHanif/risk-tech-ansible-server-demo.git
         dest: /usr/github.com/risk-tech-ansible-server-demo
     - name: build go project
-      command: (cd /usr/github.com/risk-tech-ansible-server-demo && go build -o rsmn-demo)
+      shell: (cd /usr/github.com/risk-tech-ansible-server-demo && go build -o rsmn-demo)
     - name: copy systemd config file
       copy:
         src: rsmn-demo.service
