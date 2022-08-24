@@ -6,7 +6,7 @@
   tasks:
     - name: create dir
       file:
-        path: /usr/github.com
+        path: /usr/github.com/risk-tech-ansible-server-demo
         state: directory
         owner: root
         group: root
@@ -14,7 +14,7 @@
     - name: pull code repo
       git:
         repo: https://github.com/IshlahulHanif/risk-tech-ansible-server-demo.git
-        dest: /usr/github.com
+        dest: /usr/github.com/risk-tech-ansible-server-demo
     - name: build go project
       command: "(cd /usr/github.com/risk-tech-ansible-server-demo && go build -o rsmn-demo)"
     - name: copy systemd config file
