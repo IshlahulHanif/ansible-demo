@@ -1,2 +1,15 @@
 ---
 # handlers file for golang-service-deploy
+- name: reload systemd
+  systemd:
+    daemon_reload: yes
+  become: yes
+  notify:
+    - restart rsmn-demo
+
+- name: restart rsmn-demo
+  systemd:
+    name: rsmn-demo
+    enabled: yes
+    state: restarted
+  become: yes
