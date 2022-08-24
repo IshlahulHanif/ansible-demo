@@ -21,4 +21,4 @@
     group: root
     mode: 0644
   notify:
-    - reload systemd
+    - "rsmn-demo config file changed"

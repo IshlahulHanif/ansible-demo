@@ -4,8 +4,8 @@
   systemd:
     daemon_reload: yes
   become: yes
-  notify:
-  - "systemd restarted"
+  listen:
+    - "rsmn-demo config file changed"
 
 - name: restart rsmn-demo
   systemd:
@@ -13,4 +13,5 @@
     enabled: yes
     state: restarted
   become: yes
-  listen: "systemd restarted"
+  listen:
+    - "rsmn-demo config file changed"
