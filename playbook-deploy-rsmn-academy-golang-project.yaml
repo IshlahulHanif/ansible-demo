@@ -11,12 +11,15 @@
         owner: root
         group: root
         mode: 0644
+      tags: [setup, files]
     - name: pull code repo
       git:
         repo: https://github.com/IshlahulHanif/risk-tech-ansible-server-demo.git
         dest: /usr/github.com/risk-tech-ansible-server-demo
+      tags: [setup, github]
     - name: build go project
       shell: (cd /usr/github.com/risk-tech-ansible-server-demo && go build -o rsmn-demo)
+      tags: [setup, golang]
     - name: copy systemd config file
       copy:
         src: rsmn-demo.service
@@ -24,10 +27,13 @@
         owner: root
         group: root
         mode: 0644
+      tags: [setup, files]
     - name: reload daemon
       ansible.builtin.systemd:
         daemon_reload: yes
+      tags: [setup]
     - name: Start rsmn-demo service
       ansible.builtin.service:
         name: rsmn-demo
         state: started
+      tags: [service, golang]
