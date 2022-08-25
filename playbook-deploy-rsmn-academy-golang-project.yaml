@@ -17,10 +17,12 @@
         repo: https://github.com/IshlahulHanif/risk-tech-ansible-server-demo.git
         dest: /usr/github.com/risk-tech-ansible-server-demo
       tags: [setup, github]
-      register: rsmn_demo_changed
+      register: rsmn_demo
     - name: build go project
       shell: (cd /usr/github.com/risk-tech-ansible-server-demo && go build -o rsmn-demo)
       tags: [setup, golang]
+      when: rsmn_demo.changed
+      register: rsmn_demo_build
     - name: copy systemd config file
       copy:
         src: rsmn-demo.service
@@ -29,14 +31,15 @@
         group: root
         mode: 0644
       tags: [setup, files]
+      register: rsmn_demo_config
     - name: reload daemon
       ansible.builtin.systemd:
         daemon_reload: yes
       tags: [setup]
-      when: rsmn_demo_changed
+      when: rsmn_demo_config.changed
     - name: Start rsmn-demo service
       ansible.builtin.service:
         name: rsmn-demo
         state: started
       tags: [service, golang]
-      when: rsmn_demo_changed
+      when: rsmn_demo_build.changed
