@@ -27,3 +27,4 @@
   shell: '(cd {{ golang_service_dir }} && go build -o rsmn-demo)'
   notify:
     - "rsmn-demo project built"
+  when: code_updated.changed
