@@ -3,6 +3,8 @@
 
 - name: Test Create dirs
   hosts: server-a
+  default:
+    test_default
   vars_files:
     - vars/main.yml
   tasks:
@@ -14,11 +16,3 @@
         group: root
         mode: 0644
       register: risk_demo
-    - name: create dir 2
-      file:
-        path: '/usr/{{ nama_tim2 | default(default_nama_tim) }}'
-        state: directory
-        owner: root
-        group: root
-        mode: 0644
-      when: risk_demo.changed
