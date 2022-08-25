@@ -14,7 +14,6 @@
         group: root
         mode: 0644
       register: risk_demo
-      tags: harus
     - name: create dir 2
       file:
         path: '/usr/{{ nama_tim2 | default(default_nama_tim) }}'
@@ -22,5 +21,4 @@
         owner: root
         group: root
         mode: 0644
-      when: risk_demo
-      tags: always
+      when: risk_demo.changed
