@@ -4,18 +4,43 @@
 - name: Test simba
   hosts: server-a
   tasks:
-    - name: test tag simba
-      shell: echo simba
+    - name: create dir tag simba
+      file:
+        path: /usr/simba
+        state: directory
+        owner: root
+        group: root
+        mode: 0644
       tags: [simba]
-    - name: test tag alluka
-      shell: echo alluka
+    - name: create dir tag alluka
+      file:
+        path: /usr/alluka
+        state: directory
+        owner: root
+        group: root
+        mode: 0644
       tags: [alluka]
-    - name: test tag cerberus
-      shell: echo cerberus
+    - name: create dir tag cerberus
+      file:
+        path: /usr/cerberus
+        state: directory
+        owner: root
+        group: root
+        mode: 0644
       tags: [cerberus]
-    - name: test tag astro
-      shell: echo astro
+    - name: create dir tag astro
+      file:
+        path: /usr/astro
+        state: directory
+        owner: root
+        group: root
+        mode: 0644
       tags: [astro]
-    - name: test tag anbu
-      shell: echo anbu
+    - name: create dir tag anbu
+      file:
+        path: /usr/anbu
+        state: directory
+        owner: root
+        group: root
+        mode: 0644
       tags: [anbu]
