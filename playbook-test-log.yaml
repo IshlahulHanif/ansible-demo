@@ -5,12 +5,17 @@
   hosts: server-a
   tasks:
     - name: test tag simba
+      shell: echo simba
       tags: [simba]
     - name: test tag alluka
+      shell: echo alluka
       tags: [alluka]
     - name: test tag cerberus
+      shell: echo cerberus
       tags: [cerberus]
     - name: test tag astro
+      shell: echo astro
       tags: [astro]
     - name: test tag anbu
+      shell: echo anbu
       tags: [anbu]
