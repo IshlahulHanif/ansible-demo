@@ -31,7 +31,6 @@
     - name: reload daemon
       ansible.builtin.systemd:
         daemon_reload: yes
-      tags: [setup]
       when: rsmn_demo_config.changed
     - name: Start rsmn-demo service
       ansible.builtin.service:
