@@ -1,7 +1,7 @@
 ---
 # playbooks file for golang install
 
-- name: Test simba
+- name: Test Create dirs
   hosts: server-a
   tasks:
     - name: create dir tag simba

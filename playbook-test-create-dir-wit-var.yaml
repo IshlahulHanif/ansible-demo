@@ -1,0 +1,13 @@
+---
+# playbooks file for golang install
+
+- name: Test Create dirs
+  hosts: server-a
+  tasks:
+    - name: create dir
+      file:
+        path: '/usr/{{ nama_tim }}'
+        state: directory
+        owner: root
+        group: root
+        mode: 0644
