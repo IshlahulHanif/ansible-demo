@@ -5,3 +5,4 @@
   hosts: server-a
   roles:
     - create-dir-simba
+    - create-dir-astro

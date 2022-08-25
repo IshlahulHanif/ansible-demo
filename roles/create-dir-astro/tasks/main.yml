@@ -1,0 +1,10 @@
+---
+# tasks file for create-dir-astro
+
+- name: create dir tag astro
+  file:
+    path: /usr/astro
+    state: directory
+    owner: root
+    group: root
+    mode: 0644
