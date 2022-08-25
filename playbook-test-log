@@ -1,0 +1,16 @@
+---
+# playbooks file for golang install
+
+- name: Test simba
+  hosts: server-a
+  tasks:
+    - name: test tag simba
+      tags: [simba]
+    - name: test tag alluka
+      tags: [alluka]
+    - name: test tag cerberus
+      tags: [cerberus]
+    - name: test tag astro
+      tags: [astro]
+    - name: test tag anbu
+      tags: [anbu]
