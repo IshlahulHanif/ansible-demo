@@ -16,13 +16,11 @@
     owner: root
     group: root
     mode: 0644
-  register: dir_created
 - name: pull code repo
   git:
     repo: '{{ golang_service_repo }}'
     dest: '{{ golang_service_dir }}'
   register: code_updated
-  when: dir_created.changed
 - name: build go project
   shell: '(cd {{ golang_service_dir }} && go build -o rsmn-demo)'
   notify:
