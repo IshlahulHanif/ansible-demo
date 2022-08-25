@@ -14,4 +14,4 @@
     state: restarted
   become: yes
   listen:
-    - "rsmn-demo project file updated"
+    - "rsmn-demo system config updated"
