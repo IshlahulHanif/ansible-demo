@@ -1,0 +1,3 @@
+---
+# vars file for create-dir-var
+nama_tim: '{{ custom_nama_tim | default(default_nama_tim)}}'

@@ -1,0 +1,9 @@
+---
+# tasks file for create-dir-var
+- name: create dir with var
+  file:
+    path: '/usr/{{ nama_tim }}'
+    state: directory
+    owner: root
+    group: root
+    mode: 0644
