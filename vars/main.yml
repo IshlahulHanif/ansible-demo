@@ -5,4 +5,4 @@ postgresql_users:
     password: supersecure
 postgres_users_no_log: false
 postgresql_python_library: python3-psycopg2
-nama_tim : '{{ custom_nama_tim | default(nama_tim)}}'
+nama_tim : '{{ custom_nama_tim | default(default_nama_tim)}}'
