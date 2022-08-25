@@ -31,7 +31,7 @@
         group: root
         mode: 0644
       tags: [setup, files]
-      register: rsmn_demo_config
+      register: rsmn_demo_config.changed
     - name: reload daemon
       ansible.builtin.systemd:
         daemon_reload: yes
