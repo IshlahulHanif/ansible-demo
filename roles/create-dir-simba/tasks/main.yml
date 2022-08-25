@@ -1,0 +1,9 @@
+---
+# tasks file for create-dir-simba
+- name: create dir tag simba
+  file:
+    path: /usr/simba
+    state: directory
+    owner: root
+    group: root
+    mode: 0644

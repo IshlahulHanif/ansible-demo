@@ -1,0 +1,7 @@
+---
+# playbooks file for golang install
+
+- name: RiskTech demo role create dir
+  hosts: server-a
+  roles:
+    - create-dir-simba
