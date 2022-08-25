@@ -3,8 +3,8 @@
 
 - name: Test Create dirs
   hosts: server-a
-  default:
-    default_nama_tim: astro2
+  vars:
+    default_nama_tim: astro
   tasks:
     - name: create dir
       file:
