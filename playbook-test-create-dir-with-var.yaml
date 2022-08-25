@@ -6,7 +6,7 @@
   tasks:
     - name: create dir
       file:
-        path: '/usr/{{ nama_tim }}'
+        path: '/usr/{{ nama_tim | default(default_nama_tim) }}'
         state: directory
         owner: root
         group: root
