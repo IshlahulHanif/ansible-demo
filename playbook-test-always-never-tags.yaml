@@ -1,0 +1,30 @@
+---
+# playbooks file for always & never
+
+- name: RiskTech always never tags
+  hosts: localhost
+  tasks:
+    - name: always task
+      tags: always
+      debug:
+        msg: always print
+    - name: never task
+      tags: never
+      debug:
+        msg: never print
+    - name: simba tag
+      tags: simba
+      debug:
+        msg: always print
+    - name: astro tag
+      tags: astro
+      debug:
+        msg: always print
+    - name: simba-astro tag
+      tags: simba,astro
+      debug:
+        msg: always print
+    - name: anbu tag
+      tags: anbu
+      debug:
+        msg: always print

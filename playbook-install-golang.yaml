@@ -4,6 +4,10 @@
 - name: RiskTech Install golang
   hosts: server-a
   tasks:
+    - name: update repo index
+      apt:
+        update_cache: yes
     - name: install golang
       apt:
         name: golang-go
+        state: latest
